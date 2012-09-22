@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;"/> 
+	<style>
+	body{
+		margin: 0px;
+		padding:0px;
+	}
+	#canvas{
+		border: 1px solid black;
+		display: block;
+		margin:0px;
+		padding:0px;
+	}
+	#cabecalho{
+		border: 1px solid black;
+		margin:0px;
+		padding:0px;
+		width:308px;
+		background-color: gray;
+	}
+	
+	#novo{
+		width: 20px;
+		height: 20px;
+		left: 126px;
+		position: relative;
+		vertical-align: bottom;
+	}
+	#bombasFaltando{
+		color: red;
+		font-weight: bold;
+		font-size: 12px;
+		left: 25px;
+		position: relative;
+	}
+	
+	#tempo{
+		color: white;
+		font-weight: bold;
+		left: 230px;
+		position: relative;
+		font-size: 12px;
+	}
+	#flag{
+		margin:0px;
+		padding:0px;
+		font-size: 10px;
+		width: 310px;
+		border: 1px solid black;
+		display: block;
+	}
+	</style>
+	<script src="prototype.js" type="text/javascript"></script>
+	<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+    <script src="minesweeper.js" type="text/javascript"></script> 
+  </head> 
+  <body> 
+	<div id="cabecalho">
+		<span id="bombasFaltando"></span>
+		<img id="novo" src="sun.png" />
+		<span id="tempo">0</span>
+	</div>
+	<canvas id="canvas">Canvas nao habilitado no browser.</canvas> 
+	<input type="button" value="Flag" id="flag" />
+	<script type="text/javascript">
+		novo();
+		Event.observe('canvas', 'click', main);	
+		Event.observe('novo', 'click', novo);	
+		Event.observe('flag', 'click', toggleClick);
+		window.document.body.scroll = 'no';
+	</script>
+  </body> 
+</html>
